@@ -10,8 +10,8 @@ import fnmatch
 
 data_entry = object()
 
-with open('../XLS/countries.txt') as file:
-    COUNTRIES = file.readlines()
+with open('../XLS/countries.txt') as file_obj:
+    COUNTRIES = file_obj.readlines()
     COUNTRIES = [obj.rstrip() for obj in COUNTRIES]
 
 
