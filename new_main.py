@@ -22,7 +22,7 @@ def validate(filename,
     :param filename: str
     :param obj1: pandas.DataFrame
     :param obj2: pandas.DataFrame
-    :return: bool
+    :return: str
     """
 
     series = ((obj1 == obj2) == obj1.notna()).values
