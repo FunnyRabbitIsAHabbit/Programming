@@ -65,7 +65,8 @@ def read_xls(countries=None,
     return data_frames_lst
 
 
-def write_excel(df_obj, name='new.xls'):
+def write_excel(df_obj,
+                name='new.xls'):
     """
     Making excel file.
     :param df_obj: pandas.DataFrame
@@ -77,14 +78,16 @@ def write_excel(df_obj, name='new.xls'):
                     sheet_name='Data')
 
 
-def write_html(df_obj):
+def write_html(df_obj,
+               name='new.html'):
     """
     Making html file.
     :param df_obj: pandas.DataFrame
+    :param name: str
     :return: None
     """
 
-    with open('new.html', 'w') as file:
+    with open(name, 'w') as file:
         file.write(df_obj.to_html())
 
 
