@@ -18,7 +18,7 @@ with open('../XLS/countries.txt') as file_obj:
 def validate(filename,
              obj1, obj2):
     """
-    Validation function
+    Validation function.
     :param filename: str
     :param obj1: pandas.DataFrame
     :param obj2: pandas.DataFrame
@@ -38,7 +38,7 @@ def validate(filename,
 def read_xls(countries=None,
              pattern='*.xls'):
     """
-
+    Read excel docs function.
     :param countries: list
     :param pattern: str
     :param up: str
@@ -177,7 +177,7 @@ def main():
 
     global data_entry
 
-    with open('../XLS/Indicators.txt') as ind_file:
+    with open('../XLS/indicators.txt') as ind_file:
         indicators_lst = ind_file.readlines()
     indicators_lst = [obj.rstrip() for obj in indicators_lst]
     lst = ['Country Code', 'Indicator Name'] + [str(j)
@@ -212,7 +212,7 @@ while True:
 
     elif inp == 'parse_new':
         indicators = parse_new()
-        write_excel(indicators, 'new_new.xls')
+        write_excel(indicators, 'new_new_new.xls')
 
     else:
         try:
