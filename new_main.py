@@ -8,8 +8,6 @@ import pandas as pd
 import os
 import fnmatch
 
-data_entry = object()
-
 with open('../XLS/countries.txt') as file_obj:
     COUNTRIES = file_obj.readlines()
     COUNTRIES = [obj.rstrip() for obj in COUNTRIES]
@@ -178,8 +176,6 @@ def main():
     :return: pandas.DataFrame
     """
 
-    global data_entry
-
     with open('../XLS/indicators.txt') as ind_file:
         indicators_lst = ind_file.readlines()
     indicators_lst = [obj.rstrip() for obj in indicators_lst]
@@ -204,11 +200,11 @@ while True:
 
     if inp == 'xls':
         write_excel(main_obj)
-        filename = 'new.xls'
-        new_excel_file = pd.read_excel(filename,
+        name = 'new.xls'
+        new_excel_file = pd.read_excel(name,
                                        header=0,
                                        index_col=0)
-        print(validate(filename, new_excel_file, data_entry))
+        print(validate(name, new_excel_file, main_obj))
 
     elif inp == 'html':
         write_html(main_obj)
