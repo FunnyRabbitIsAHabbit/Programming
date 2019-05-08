@@ -8,7 +8,7 @@ import pandas as pd
 import os
 import fnmatch
 
-with open('../XLS/countries.txt') as file_obj:
+with open('XLS/countries.txt') as file_obj:
     COUNTRIES = file_obj.readlines()
     COUNTRIES = [obj.rstrip() for obj in COUNTRIES]
 
@@ -47,12 +47,12 @@ def read_xls(countries=None,
     library = set()
     xls_lst = list()
 
-    for excel_file in os.listdir('../XLS'):
+    for excel_file in os.listdir('XLS'):
         if fnmatch.fnmatch(excel_file, pattern):
             library.add(excel_file)
 
     for excel_file in library:
-        xls_lst.append(pd.read_excel('../XLS/'+excel_file,
+        xls_lst.append(pd.read_excel('XLS/'+excel_file,
                                      sheet_name='Data',
                                      header=3,
                                      index_col=1))
@@ -176,7 +176,7 @@ def main():
     :return: pandas.DataFrame
     """
 
-    with open('../XLS/indicators.txt') as ind_file:
+    with open('XLS/indicators.txt') as ind_file:
         indicators_lst = ind_file.readlines()
     indicators_lst = [obj.rstrip() for obj in indicators_lst]
     lst = ['Country Code', 'Indicator Name'] + [str(j)
